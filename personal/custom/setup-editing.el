@@ -3,9 +3,17 @@
 
 ;;; code:
 
-;; coding-system
+;;
+(defun switch-between-two-recent-buffers ()
+  "Switching Between Two Recently Used Buffers."
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
+(global-set-key (kbd "<f6>") 'switch-between-two-recent-buffers)
+
+;; coding-system on windows or cygwin or my particular box use dos end of line
 (if (or (string-equal system-type "cygwin")
-        (string-equal system-type "windows-nt"))
+        (string-equal system-type "windows-nt")
+        (string-equal system-name "archbox"))
     (setq-default buffer-file-coding-system 'prefer-utf-8-dos))
 
 (defun unix-file ()
