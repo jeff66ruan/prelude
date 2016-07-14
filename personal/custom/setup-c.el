@@ -3,10 +3,6 @@
 
 ;;; code:
 
-(if (or (string-equal system-type "cygwin")
-        (string-equal system-type "windows-nt"))
-    (setq-default buffer-file-coding-system 'prefer-utf-8-dos))
-
 (defun my-c-mode-hook ()
   "My customizations for all of c mode and related modes."
   (setq c-default-style

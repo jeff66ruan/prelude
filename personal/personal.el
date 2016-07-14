@@ -10,6 +10,7 @@
 
 (add-to-list 'load-path personal-custom-dir)
 
+(require 'setup-editing)
 (require 'setup-helm-gtags)
 ;; (require 'setup-ggtags)  either helm-gtags or ggtags
 (require 'setup-cedet)
