@@ -3,7 +3,10 @@
 
 ;;; code:
 
-;;
+(setq-default
+ indent-tabs-mode nil)
+
+;; switch between buffers
 (defun switch-between-two-recent-buffers ()
   "Switching Between Two Recently Used Buffers."
   (interactive)
@@ -35,6 +38,30 @@
   "Function to create a temp buffer."
   (interactive)
   (switch-to-buffer (make-temp-name "scratch")))
+
+(defun rename-this-file-and-buffer (new-name)
+  "Renames both current buffer and file it's visiting to NEW-NAME."
+  (interactive "sNew name: ")
+  (let ((name (buffer-name))
+        (filename (buffer-file-name)))
+    (unless filename
+      (error "Buffer '%s' is not visiting a file!" name))
+    (if (get-buffer new-name)
+        (message "A buffer named '%s' already exists!" new-name)
+      (progn
+        (when (file-exists-p filename)
+         (rename-file filename new-name 1))
+        (rename-buffer new-name)
+        (set-visited-file-name new-name)))))
+
+(defun browse-current-file ()
+  "Open the current file as a URL using `browse-url'."
+  (interactive)
+  (let ((file-name (buffer-file-name)))
+    (if (and (fboundp 'tramp-tramp-file-p)
+             (tramp-tramp-file-p file-name))
+        (error "Cannot open tramp file")
+      (browse-url (concat "file://" file-name)))))
 
 ;; highlight symbol
 (prelude-require-packages '(highlight-symbol))
