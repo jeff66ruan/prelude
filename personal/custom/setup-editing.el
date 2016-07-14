@@ -6,6 +6,10 @@
 (setq-default
  indent-tabs-mode nil)
 
+(scroll-bar-mode -1)
+
+(set-face-attribute 'default nil :height 120)
+
 ;; switch between buffers
 (defun switch-between-two-recent-buffers ()
   "Switching Between Two Recently Used Buffers."
