@@ -14,6 +14,7 @@
 ;; (require 'setup-ggtags)  either helm-gtags or ggtags
 (require 'setup-cedet)
 (require 'setup-c)
+(require 'setup-themes)
 
 ;; setup the projectile
 (setq projectile-indexing-method 'alien)
