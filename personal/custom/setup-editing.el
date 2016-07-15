@@ -4,11 +4,14 @@
 ;;; code:
 
 (setq-default
+ scroll-preserve-screen-position 'always
+ prelude-whitespace nil
+ prelude-clean-whitespace-on-save nil
  indent-tabs-mode nil)
 
 (scroll-bar-mode -1)
 
-(set-face-attribute 'default nil :height 120)
+(set-face-attribute 'default nil :height 110)
 
 ;; switch between buffers
 (defun switch-between-two-recent-buffers ()
