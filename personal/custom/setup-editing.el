@@ -13,6 +13,9 @@
 
 (set-face-attribute 'default nil :height 110)
 
+(when (string-equal system-type "darwin")
+  (set-face-attribute 'default nil :height 140))
+
 ;; switch between buffers
 (defun switch-between-two-recent-buffers ()
   "Switching Between Two Recently Used Buffers."
