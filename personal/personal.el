@@ -19,6 +19,12 @@
 (require 'setup-c)
 (require 'setup-themes)
 
+(prelude-require-packages '(helm-descbinds))
+(require 'helm-descbinds)
+(helm-descbinds-mode)
+
+(setq projectile-switch-project-action 'helm-projectile)
+
 ;; setup the projectile
 (setq projectile-indexing-method 'alien)
 (setq projectile-enable-caching t)
