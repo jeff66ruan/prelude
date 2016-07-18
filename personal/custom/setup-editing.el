@@ -11,7 +11,7 @@
 
 (scroll-bar-mode -1)
 
-(set-face-attribute 'default nil :height 110)
+(set-face-attribute 'default nil :height 120)
 
 ;; switch between buffers
 (defun switch-between-two-recent-buffers ()
