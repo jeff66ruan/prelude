@@ -17,17 +17,17 @@
 ;; (require 'setup-ggtags)  either helm-gtags or ggtags
 (require 'setup-cedet)
 (require 'setup-c)
-(require 'setup-themes)
+;; (require 'setup-themes)
 
 (prelude-require-packages '(helm-descbinds))
 (require 'helm-descbinds)
 (helm-descbinds-mode)
 
-(setq projectile-switch-project-action 'helm-projectile)
-
 ;; setup the projectile
+(setq projectile-switch-project-action 'helm-projectile)
 (setq projectile-indexing-method 'alien)
 (setq projectile-enable-caching t)
+(setq projectile-svn-command "find . -type f -print0")
 
 ;; ;; setup windows
 ;; (if (equal system-type 'windows-nt) (require 'setup-windows))

@@ -7,6 +7,7 @@
  helm-gtags-pulse-at-cursor t
  helm-gtags-prefix-key "\C-cg"
  helm-gtags-suggested-key-mapping t
+ helm-gtags-cygwin-use-global-w32-port nil
  )
 
 ;; Enable helm-gtags-mode in Dired so you can jump to any tag

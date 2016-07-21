@@ -7,6 +7,8 @@
 ;; (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
 ;; (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
+(helm-autoresize-mode t)
+
 (provide 'setup-helm)
 
 ;;; setup-helm.el ends here
